@@ -1,7 +1,7 @@
-#' @title Process data
-#' @param df Data frame of data
-#'
-#'
+#' @title Process CoAgMet data returned from API
+#' @param df Data frame of CoAgMet data as returned by fetch_coagmet_data_csv.R
+#' @returns Processed data frame of CoAgMet data
+#' @export
 
 
 process_coagmet_data <- function(df){
@@ -32,5 +32,6 @@ process_coagmet_data <- function(df){
     )
 
   return(df2)
+  #return(list(df2, units))
 
 }

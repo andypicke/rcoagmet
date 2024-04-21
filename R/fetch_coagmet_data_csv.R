@@ -5,6 +5,7 @@
 #' @author Andy Pickering
 #' @returns Data frame of CoAgMet data
 #'
+#' @export
 
 
 

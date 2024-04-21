@@ -1,13 +1,13 @@
 #' @title Construct url request for data
-#' @param station_id ID of weather station
-#' @param time_step Frequency of data (5min, hourly, daily)
-#' @param date_from Start date of data to get in yyyy-mm-dd format
-#' @param date_to End date of data in yyyy-mm-dd format
+#' @param station_id ID of weather station; default 'cht01'
+#' @param time_step Frequency of data (5min, hourly, daily); default 'hourly'
+#' @param date_from Start date of data to get in yyyy-mm-dd format: default is 5 days ago
+#' @param date_to End date of data in yyyy-mm-dd format; defaut 'now'
 #' @returns url to request data from CoAgMet API
 #' @author Andy Pickering
 #' @export
 
-construct_data_url <- function(station_id="cht01", time_step="hourly", date_from="2024-04-10", date_to="now"){
+construct_data_url <- function(station_id="cht01", time_step="hourly", date_from = lubridate::today() - 5, date_to = "now"){
 
   base_url <- "https://coagmet.colostate.edu/"
 

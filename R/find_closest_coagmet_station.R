@@ -1,7 +1,7 @@
-#' @title Find closest CoAgMet station to given location
+#' @title Find closest CoAgMet station to given location (using Haversine formula)
 #' @param xlat latitidue (degN)
 #' @param xlon longitude (degE)
-#' @returns closest_station: 1 row Dataframe of info for closest station
+#' @returns closest_station: 1 row Dataframe of info for closest station, including distance in meters
 #' @export
 #' @author Andy Pickering
 
@@ -15,7 +15,6 @@ find_closest_coagmet_station <- function(xlat, xlon){
   # distances between (xlon,xlat) and stations in meters
   dists <- geosphere::distHaversine(c(xlon,xlat), dplyr::bind_cols(stations$longitude_deg_e,stations$latitude_deg_n))
 
-  #min(dists)
   imin <- which.min(dists)
 
   closest_station <- stations[imin,]

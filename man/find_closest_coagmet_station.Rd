@@ -2,7 +2,7 @@
 % Please edit documentation in R/find_closest_coagmet_station.R
 \name{find_closest_coagmet_station}
 \alias{find_closest_coagmet_station}
-\title{Find closest CoAgMet station to given location}
+\title{Find closest CoAgMet station to given location (using Haversine formula)}
 \usage{
 find_closest_coagmet_station(xlat, xlon)
 }
@@ -12,10 +12,10 @@ find_closest_coagmet_station(xlat, xlon)
 \item{xlon}{longitude (degE)}
 }
 \value{
-closest_station: 1 row Dataframe of info for closest station
+closest_station: 1 row Dataframe of info for closest station, including distance in meters
 }
 \description{
-Find closest CoAgMet station to given location
+Find closest CoAgMet station to given location (using Haversine formula)
 }
 \author{
 Andy Pickering

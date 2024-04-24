@@ -14,3 +14,11 @@ BugReports: https://github.com/andypicke/rcoagmet/issues
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    geosphere,
+    glue,
+    janitor,
+    lubridate,
+    plotly,
+    readr

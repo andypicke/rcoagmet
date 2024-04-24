@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rcoagmet is to …
+The goal of rcoagmet is to provide functions for downloading data from
+CoAgMet weather stations.
 
 ## Installation
 
@@ -20,33 +21,32 @@ devtools::install_github("andypicke/rcoagmet")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Download metadata for all CoAgMet stations:
 
 ``` r
 library(rcoagmet)
-## basic example code
+
+meta <- get_coagmet_meta()
+#> Rows: 123 Columns: 13
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (8): Station, Name, Location, Active, Irrigation, First Observation, Las...
+#> dbl (5): Latitude (degN), Longitude (degE), Elevation (ft), Anemometer Heigh...
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+head(meta)
+#> # A tibble: 6 × 13
+#>   station name        location       latitude_deg_n longitude_deg_e elevation_ft
+#>   <chr>   <chr>       <chr>                   <dbl>           <dbl>        <dbl>
+#> 1 akr02   Akron       USDA-ARS-GPRC            40.2           -103.         4537
+#> 2 alt01   Ault        1 mi SE Ault             40.6           -105.         4910
+#> 3 avn01   Avondale    1 mi SE Avond…           38.2           -104.         4630
+#> 4 bla01   Blanca      8 mi SW Blanca           37.4           -106.         7755
+#> 5 bnv01   Buena Vista CDW Area SW o…           38.8           -106.         7900
+#> 6 brg01   Briggsdale  3 mi S Briggs…           40.6           -104.         4858
+#> # ℹ 7 more variables: anemometer_height_m <dbl>, active <chr>,
+#> #   irrigation <chr>, first_observation <chr>, last_observation <chr>,
+#> #   timestep_s <dbl>, network <chr>
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

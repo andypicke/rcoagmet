@@ -9,7 +9,7 @@ get_coagmet_meta <- function(station_id = "all") {
     janitor::clean_names()
 
   if (station_id != "all") {
-    meta <- meta |> dplyr::filter(station == station_id)
+    meta <- meta |> dplyr::filter('station' == station_id)
   }
 
   return(meta)

@@ -18,10 +18,9 @@ process_coagmet_data <- function(df){
   df2 <- df[-1,]
 
   # convert datetimes, fix timezone, add date etc
-  df2 <- df2 |>
-    dplyr::mutate(date_and_time = lubridate::mdy_hm('date_and_time')) |>
-    dplyr::mutate(date_and_time = lubridate::force_tz('date_and_time', tzone = "MST")) |> # by default API returns times in MST (UTC-7)
-    dplyr::mutate(date = lubridate::date('date_and_time'))
+  df2$date_and_time <- lubridate::mdy_hm(df2$date_and_time)
+  df2$date_and_time <- lubridate::force_tz(time = df2$date_and_time, tzone = "MST") # by default API returns times in MST (UTC-7)
+  df2$date <- lubridate::date(x = df2$date_and_time)
 
   df2$gust_time2 <- lubridate::ymd_hm(paste(df2$date, df2$gust_time))
 

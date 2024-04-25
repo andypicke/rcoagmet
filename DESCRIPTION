@@ -3,8 +3,8 @@ Title: API Wrapper for CoAgMet Weather Stations
 Version: 0.0.0.9000
 Authors@R: 
     person("Andy", "Pickering", , "andypicke@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: API Wrapper for CoAgMet Weather Stations
+           comment = c(ORCID = "0000-0002-5724-7042"))
+Description: API Wrapper for CoAgMet Weather Stations.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

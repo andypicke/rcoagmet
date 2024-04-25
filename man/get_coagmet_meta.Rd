@@ -4,11 +4,17 @@
 \alias{get_coagmet_meta}
 \title{Get Metadata for CoAgMet Weather Stations}
 \usage{
-get_coagmet_meta()
+get_coagmet_meta(station_id = "all")
+}
+\arguments{
+\item{station_id}{ID of station to retrieve info for. Default is all stations}
 }
 \value{
 Data frame of metadata for all CoAgMet Weather Stations
 }
 \description{
 Get Metadata for CoAgMet Weather Stations
+}
+\author{
+Andy Pickering
 }

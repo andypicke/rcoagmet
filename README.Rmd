@@ -43,15 +43,31 @@ head(meta)
 
 ```
 
+
+Find closest CoAgMet station to a given point:
+```{r}
+
+# coordinates for Denver
+xlat <- 39.74
+xlon <- -104.99
+
+nearest_station <- find_closest_coagmet_station(xlat, xlon)
+
+nearest_station
+
+```
+
+
 Download data for one station:
 
 ```{r}
 
-df <- get_coagmet_data_one_station("cht01")
+df <- get_coagmet_data_one_station(station_id = "den01")
 
 head(df)
 
 ```
+
 
 Plot air temp:
 ```{r}

@@ -13,10 +13,11 @@
 #-------------------------------------
 # function to get data from API
 #-------------------------------------
-fetch_coagmet_data_csv <- function(data_url){
-
-  df <- readr::read_csv(file = data_url,
-                        col_names = TRUE,
-                        na = "-999")  # missing values aremarked as -999 in data
-  return(df)
+fetch_coagmet_data_csv <- function(data_url) {
+  df <- readr::read_csv(
+    file = data_url,
+    col_names = TRUE,
+    na = "-999", # missing values aremarked as -999 in data
+    show_col_types = FALSE
+  )
 }

@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/andypicke/rcoagmet/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/andypicke/rcoagmet/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of rcoagmet is to provide functions for downloading data from
@@ -74,24 +76,17 @@ Download data for one station:
 ``` r
 
 df <- get_coagmet_data_one_station(station_id = "den01")
-#> Rows: 133 Columns: 14
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (14): Station, Date and Time, Air Temp, RH, Dewpoint, Solar Rad, Precip,...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 head(df)
 #> # A tibble: 6 × 16
 #>   station date_and_time       air_temp    rh dewpoint solar_rad precip  wind
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>  <dbl> <dbl>
-#> 1 den01   2024-04-22 00:00:00     51.8 0.515     34.5      0         0  2.4 
-#> 2 den01   2024-04-22 01:00:00     51.2 0.522     34.3      0         0  2.34
-#> 3 den01   2024-04-22 02:00:00     49.4 0.565     34.6      0         0  1.39
-#> 4 den01   2024-04-22 03:00:00     49.1 0.547     33.5      0         0  1.48
-#> 5 den01   2024-04-22 04:00:00     48.9 0.522     32.1      0         0  2.07
-#> 6 den01   2024-04-22 05:00:00     48.9 0.486     30.4      0.03      0  1.41
+#> 1 den01   2024-04-24 00:00:00     51.6 0.614     38.8      0         0  0.77
+#> 2 den01   2024-04-24 01:00:00     50.6 0.656     39.5      0         0  2.19
+#> 3 den01   2024-04-24 02:00:00     49.1 0.698     39.6      0         0  1.76
+#> 4 den01   2024-04-24 03:00:00     48.2 0.71      39.2      0         0  1.71
+#> 5 den01   2024-04-24 04:00:00     46.9 0.724     38.5      0         0  1.04
+#> 6 den01   2024-04-24 05:00:00     46.1 0.73      37.9      0.15      0  1.91
 #> # ℹ 8 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_time <chr>,
 #> #   gust_dir <dbl>, x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>,
 #> #   gust_time2 <dttm>

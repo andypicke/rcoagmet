@@ -4,7 +4,7 @@
 #' @export
 
 
-process_coagmet_data <- function(df){
+process_coagmet_data_csv <- function(df){
 
   # clean names
   df <- df |> janitor::clean_names()

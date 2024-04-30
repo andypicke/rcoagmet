@@ -7,23 +7,26 @@
 #' @author Andy Pickering
 #' @export
 
-construct_data_url <- function(station_id="cht01", time_step="hourly", date_from = lubridate::today() - 5, date_to = "now"){
-
+construct_data_url <- function(station_id = "cht01", time_step = "hourly", date_from = lubridate::today() - 5, date_to = "now") {
   base_url <- "https://coagmet.colostate.edu/"
 
   date_str <- paste0("from=", date_from, "&to=", date_to)
 
-  if (station_id == "all") {
-    data_url <- paste0(base_url, 'data/',time_step ,
-                       ".csv?header=yes&", date_str,
-                       "&fields=t,rh,dewpt,solarRad,precip,windSpeed,windDir,gustSpeed,gustTime,gustDir,st5cm,st15cm")
-
-  } else{
-
-    data_url <- paste0(base_url, 'data/',time_step ,'/',station_id,
-                       ".csv?header=yes&", date_str,
-                       "&fields=t,rh,dewpt,solarRad,precip,windSpeed,windDir,gustSpeed,gustTime,gustDir,st5cm,st15cm")
-
+  if (time_step == "daily") {
+    fields_str <- ""
+  } else {
+    fields_str <- "&fields=t,rh,dewpt,solarRad,precip,windSpeed,windDir,gustSpeed,gustTime,gustDir,st5cm,st15cm"
   }
 
+  if (station_id == "all") {
+    data_url <- paste0(
+      base_url, "data/", time_step,
+      ".csv?header=yes&", date_str, fields_str
+    )
+  } else {
+    data_url <- paste0(
+      base_url, "data/", time_step, "/", station_id,
+      ".csv?header=yes&", date_str, fields_str
+    )
+  }
 }

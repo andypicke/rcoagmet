@@ -14,7 +14,11 @@ get_coagmet_data_one_station <- function(station_id="cht01", time_step="hourly",
 
   df <- rcoagmet::fetch_coagmet_data_csv(url)
 
-  df_proc <- rcoagmet::process_coagmet_data_csv(df)
+  if (time_step == "daily") {
+    df_proc <- rcoagmet::process_coagmet_data_csv_daily(df)
+  } else {
+    df_proc <- rcoagmet::process_coagmet_data_csv(df)
+  }
 
   return(df_proc)
 }

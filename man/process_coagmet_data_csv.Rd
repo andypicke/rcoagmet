@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_coagmet_data_csv.R
 \name{process_coagmet_data_csv}
 \alias{process_coagmet_data_csv}
-\title{Process CoAgMet data returned from API}
+\title{Process CoAgMet (csv) data returned from API}
 \usage{
 process_coagmet_data_csv(df)
 }
@@ -13,5 +13,8 @@ process_coagmet_data_csv(df)
 Processed data frame of CoAgMet data
 }
 \description{
-Process CoAgMet data returned from API
+Process CoAgMet (csv) data returned from API
+}
+\seealso{
+\code{\link[=fetch_coagmet_data_csv]{fetch_coagmet_data_csv()}}
 }

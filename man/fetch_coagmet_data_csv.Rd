@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetch_coagmet_data_csv.R
 \name{fetch_coagmet_data_csv}
 \alias{fetch_coagmet_data_csv}
-\title{fetch_coagmet_data_csv}
+\title{Download CoAgMet data (csv) for specified url}
 \usage{
 fetch_coagmet_data_csv(data_url)
 }
@@ -10,11 +10,11 @@ fetch_coagmet_data_csv(data_url)
 \item{data_url}{API url for data request}
 }
 \value{
-Data frame of CoAgMet data
+Data frame of requested CoAgMet data
 }
 \description{
-Fetch csv data from CoAgMet API for specified url
+Download CoAgMet data (csv) for specified url
 }
-\author{
-Andy Pickering
+\seealso{
+\code{\link[=construct_data_url]{construct_data_url()}}
 }

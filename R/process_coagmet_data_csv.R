@@ -1,6 +1,7 @@
-#' @title Process CoAgMet data returned from API
+#' @title Process CoAgMet (csv) data returned from API
 #' @param df Data frame of CoAgMet data as returned by fetch_coagmet_data_csv.R
 #' @returns Processed data frame of CoAgMet data
+#' @seealso [fetch_coagmet_data_csv()]
 #' @export
 
 

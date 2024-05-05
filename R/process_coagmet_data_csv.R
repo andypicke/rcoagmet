@@ -23,15 +23,13 @@ process_coagmet_data_csv <- function(df){
   df2$date_and_time <- lubridate::force_tz(time = df2$date_and_time, tzone = "MST") # by default API returns times in MST (UTC-7)
   df2$date <- lubridate::date(x = df2$date_and_time)
 
-  df2$gust_time2 <- lubridate::ymd_hm(paste(df2$date, df2$gust_time))
+  #df2$gust_datetime <- lubridate::ymd_hm(paste(df2$date, df2$gust_time))
 
-  # convert data columns from character to numeric
   df2 <- df2 |>
-    dplyr::mutate(dplyr::across(-c('station', 'date_and_time', 'date', 'gust_time', 'gust_time2'),
+    dplyr::mutate(dplyr::across(-c('station', 'date_and_time', 'date'),
                                 as.numeric)
     )
 
   return(df2)
-  #return(list(df2, units))
 
 }

@@ -4,10 +4,12 @@
 \alias{get_coagmet_meta}
 \title{Get Metadata for CoAgMet Weather Stations}
 \usage{
-get_coagmet_meta(station_id = "all")
+get_coagmet_meta(station_id = "all", network = "coagmet")
 }
 \arguments{
 \item{station_id}{ID of station to retrieve info for. Default is all stations}
+
+\item{network}{Network :either "coagmet" or "nw" (northern water). Default is coagmet}
 }
 \value{
 Data frame of metadata for all CoAgMet Weather Stations

@@ -63,7 +63,7 @@ Download data for one station:
 
 ```{r}
 
-df <- get_coagmet_data_one_station(station_id = "den01")
+df <- get_coagmet_data(station_id = "den01")
 
 head(df)
 

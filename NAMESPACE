@@ -3,7 +3,7 @@
 export(construct_data_url)
 export(fetch_coagmet_data_csv)
 export(find_closest_coagmet_station)
-export(get_coagmet_data_one_station)
+export(get_coagmet_data)
 export(get_coagmet_meta)
 export(plot_coagmet_plotly)
 export(process_coagmet_data_csv)

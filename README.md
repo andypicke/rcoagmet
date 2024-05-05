@@ -75,21 +75,20 @@ Download data for one station:
 
 ``` r
 
-df <- get_coagmet_data_one_station(station_id = "den01")
+df <- get_coagmet_data(station_id = "den01")
 
 head(df)
-#> # A tibble: 6 × 16
+#> # A tibble: 6 × 14
 #>   station date_and_time       air_temp    rh dewpoint solar_rad precip  wind
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>  <dbl> <dbl>
-#> 1 den01   2024-04-24 00:00:00     51.6 0.614     38.8      0         0  0.77
-#> 2 den01   2024-04-24 01:00:00     50.6 0.656     39.5      0         0  2.19
-#> 3 den01   2024-04-24 02:00:00     49.1 0.698     39.6      0         0  1.76
-#> 4 den01   2024-04-24 03:00:00     48.2 0.71      39.2      0         0  1.71
-#> 5 den01   2024-04-24 04:00:00     46.9 0.724     38.5      0         0  1.04
-#> 6 den01   2024-04-24 05:00:00     46.1 0.73      37.9      0.15      0  1.91
-#> # ℹ 8 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_time <chr>,
-#> #   gust_dir <dbl>, x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>,
-#> #   gust_time2 <dttm>
+#> 1 den01   2024-04-30 00:00:00     54.6 0.377     29.3      0         0  2.19
+#> 2 den01   2024-04-30 01:00:00     53.5 0.387     28.9      0         0  2.53
+#> 3 den01   2024-04-30 02:00:00     53.0 0.39      28.7      0         0  2.3 
+#> 4 den01   2024-04-30 03:00:00     51.3 0.432     29.6      0         0  0.96
+#> 5 den01   2024-04-30 04:00:00     50.7 0.441     29.6      0         0  1.85
+#> 6 den01   2024-04-30 05:00:00     49.3 0.493     31.1      0.57      0  4.1 
+#> # ℹ 6 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_dir <dbl>,
+#> #   x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>
 ```
 
 Plot air temp:

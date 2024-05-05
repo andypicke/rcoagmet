@@ -14,7 +14,7 @@ construct_data_url(
 \arguments{
 \item{station_id}{ID of weather station; default 'cht01'. Use 'all' to get data for all stations}
 
-\item{time_step}{Frequency of data (5min, hourly, daily); default 'hourly'}
+\item{time_step}{Frequency of data (5min, hourly, daily, latest); default 'hourly'}
 
 \item{date_from}{Start date of data to get in yyyy-mm-dd format: default is 5 days ago}
 

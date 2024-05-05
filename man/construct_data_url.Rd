@@ -2,7 +2,7 @@
 % Please edit documentation in R/construct_data_url.R
 \name{construct_data_url}
 \alias{construct_data_url}
-\title{Construct url request for data}
+\title{Construct URL request for data}
 \usage{
 construct_data_url(
   station_id = "cht01",
@@ -21,10 +21,10 @@ construct_data_url(
 \item{date_to}{End date of data in yyyy-mm-dd format; defaut 'now'}
 }
 \value{
-url to request data from CoAgMet API
+data_url : UR to request data from CoAgMet API
 }
 \description{
-Construct url request for data
+Construct URL request for data
 }
 \author{
 Andy Pickering

@@ -26,3 +26,6 @@ Data frame of processed CoAgMet data for one station
 \description{
 Get and process CoAgMet data for one station
 }
+\examples{
+df <- get_coagmet_data_one_station(station_id = "cht01", time_step = "daily")
+}

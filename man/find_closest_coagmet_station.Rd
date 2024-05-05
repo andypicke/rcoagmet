@@ -17,6 +17,7 @@ closest_station: 1 row Dataframe of info for closest station, including distance
 \description{
 Find closest CoAgMet station to given location (using Haversine formula)
 }
-\author{
-Andy Pickering
+\examples{
+closest <- find_closest_coagmet_station(xlat = 39.74, xlon = -104.99)
+
 }

@@ -26,6 +26,7 @@ data_url : UR to request data from CoAgMet API
 \description{
 Construct URL request for data
 }
-\author{
-Andy Pickering
+\examples{
+url <- construct_data_url()
+
 }

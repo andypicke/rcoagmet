@@ -2,8 +2,10 @@
 #' @param xlat latitidue (degN)
 #' @param xlon longitude (degE)
 #' @returns closest_station: 1 row Dataframe of info for closest station, including distance in meters
+#' @examples
+#' closest <- find_closest_coagmet_station(xlat = 39.74, xlon = -104.99)
+#'
 #' @export
-#' @author Andy Pickering
 
 
 

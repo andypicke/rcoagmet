@@ -4,7 +4,9 @@
 #' @param date_from Start date of data to get in yyyy-mm-dd format: default is 5 days ago
 #' @param date_to End date of data in yyyy-mm-dd format; defaut 'now'
 #' @returns data_url : UR to request data from CoAgMet API
-#' @author Andy Pickering
+#' @examples
+#' url <- construct_data_url()
+#'
 #' @export
 
 construct_data_url <- function(station_id = "cht01",

@@ -15,6 +15,7 @@ Data frame of metadata for all CoAgMet Weather Stations
 \description{
 Get Metadata for CoAgMet Weather Stations
 }
-\author{
-Andy Pickering
+\examples{
+meta <- get_coagmet_meta()
+
 }

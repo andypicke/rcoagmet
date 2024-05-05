@@ -4,7 +4,8 @@
 #' @param date_from Start date of data to get in yyyy-mm-dd format: default is 5 days ago
 #' @param date_to End date of data in yyyy-mm-dd format; defaut 'now'
 #' @returns Data frame of processed CoAgMet data for one station
-#'
+#' @examples
+#' df <- get_coagmet_data_one_station(station_id = "cht01", time_step = "daily")
 #' @export
 
 

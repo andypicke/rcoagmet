@@ -20,13 +20,12 @@ process_coagmet_data_csv_daily <- function(df) {
   df2$date <- lubridate::mdy(df2$date)
 
   # convert gust time into date-time format
-  df2$gust_time2 <- lubridate::ymd_hm(paste(df2$date, df2$gust_time))
+  df2$gust_datetime <- lubridate::ymd_hm(paste(df2$date, df2$gust_time))
 
   #  convert data columns from character to numeric
-  # TO-DO: de-select columns ending in 'time'
   df2 <- df2 |>
     dplyr::mutate(dplyr::across(
-      -c("station", "date", "gust_time", "gust_time2"),
+      -c("station", "date", "gust_time", "gust_datetime", dplyr::ends_with('_time')),
       as.numeric
     ))
 

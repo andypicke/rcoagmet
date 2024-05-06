@@ -15,7 +15,7 @@ find_closest_coagmet_station <- function(xlat, xlon){
   stations <- rcoagmet::get_coagmet_meta()
 
   # distances between (xlon,xlat) and stations in meters
-  dists <- geosphere::distHaversine(c(xlon,xlat), dplyr::bind_cols(stations$longitude_deg_e,stations$latitude_deg_n))
+  dists <- geosphere::distHaversine(c(xlon,xlat), stations[c("longitude_deg_e","latitude_deg_n")])
 
   imin <- which.min(dists)
 

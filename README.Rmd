@@ -44,6 +44,17 @@ head(meta)
 
 ```
 
+Get latest data from all stations:
+
+```{r}
+
+latest <- get_coagmet_data(station_id = "all", time_step = "latest")
+
+head(latest)
+
+```
+
+
 
 Find closest CoAgMet station to a given point:
 ```{r}

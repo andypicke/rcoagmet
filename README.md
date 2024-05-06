@@ -48,6 +48,27 @@ head(meta)
 #> #   timestep_s <dbl>, network <chr>
 ```
 
+Get latest data from all stations:
+
+``` r
+
+latest <- get_coagmet_data(station_id = "all", time_step = "latest")
+
+head(latest)
+#> # A tibble: 6 × 15
+#>   station date_and_time       air_temp    rh dewpoint solar_rad x5min_precip
+#>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>        <dbl>
+#> 1 akr02   2024-05-06 07:00:00     58.5 0.254    23.2      257.            NA
+#> 2 alt01   2024-05-06 07:00:00     50.5 0.336    22.9       99.7           NA
+#> 3 avn01   2024-05-06 07:10:00     54.6 0.182    12.1      376              0
+#> 4 bla01   2024-05-06 07:05:00     36.5 0.305     8.31     359              0
+#> 5 bnv01   2024-05-06 07:10:00     33.2 0.429    13.0      301.             0
+#> 6 brg01   2024-05-06 07:00:00     51.8 0.464    31.9       84.0           NA
+#> # ℹ 8 more variables: hourly_precip <dbl>, wind <dbl>, wind_dir <dbl>,
+#> #   gust_speed <dbl>, gust_dir <dbl>, x5cm_soil_temp <dbl>,
+#> #   x15cm_soil_temp <dbl>, date <date>
+```
+
 Find closest CoAgMet station to a given point:
 
 ``` r
@@ -81,12 +102,12 @@ head(df)
 #> # A tibble: 6 × 14
 #>   station date_and_time       air_temp    rh dewpoint solar_rad precip  wind
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>  <dbl> <dbl>
-#> 1 den01   2024-04-30 00:00:00     54.6 0.377     29.3      0         0  2.19
-#> 2 den01   2024-04-30 01:00:00     53.5 0.387     28.9      0         0  2.53
-#> 3 den01   2024-04-30 02:00:00     53.0 0.39      28.7      0         0  2.3 
-#> 4 den01   2024-04-30 03:00:00     51.3 0.432     29.6      0         0  0.96
-#> 5 den01   2024-04-30 04:00:00     50.7 0.441     29.6      0         0  1.85
-#> 6 den01   2024-04-30 05:00:00     49.3 0.493     31.1      0.57      0  4.1 
+#> 1 den01   2024-05-01 00:00:00     52.5 0.286     20.8      0         0  2.3 
+#> 2 den01   2024-05-01 01:00:00     50.9 0.373     25.7      0         0  2.98
+#> 3 den01   2024-05-01 02:00:00     50.0 0.395     26.3      0         0  2.12
+#> 4 den01   2024-05-01 03:00:00     49.3 0.35      22.8      0         0  1.67
+#> 5 den01   2024-05-01 04:00:00     49.1 0.333     21.4      0         0  2.67
+#> 6 den01   2024-05-01 05:00:00     49.8 0.289     18.7      0.75      0  3.05
 #> # ℹ 6 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_dir <dbl>,
 #> #   x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>
 ```
@@ -100,7 +121,7 @@ df |>
   ggplot2::geom_line()
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 Make an interactive plot of one variable with plotly:
 

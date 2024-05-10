@@ -8,7 +8,8 @@ construct_data_url(
   station_id = "cht01",
   time_step = "hourly",
   date_from = lubridate::today() - 5,
-  date_to = "now"
+  date_to = "now",
+  network = "coagmet"
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ construct_data_url(
 \item{date_from}{Start date of data to get in yyyy-mm-dd format: default is 5 days ago}
 
 \item{date_to}{End date of data in yyyy-mm-dd format; defaut 'now'}
+
+\item{network}{Network :either "coagmet" or "nw" (northern water). Default is coagmet}
 }
 \value{
 data_url : UR to request data from CoAgMet API

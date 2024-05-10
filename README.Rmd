@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 The goal of rcoagmet is to provide functions for downloading data from [CoAgMet](https://coagmet.colostate.edu/) weather stations, using their [Data API](https://coagmet.colostate.edu/data/doc.html).
 
-## Installation
+# Installation
 
 You can install the development version of rcoagmet from [GitHub](https://github.com/) with:
 
@@ -31,11 +31,11 @@ You can install the development version of rcoagmet from [GitHub](https://github
 devtools::install_github("andypicke/rcoagmet")
 ```
 
-## Example
+# Examples
 
-Download metadata for all CoAgMet stations:
+## Download metadata for all CoAgMet stations:
 
-```{r example}
+```{r }
 library(rcoagmet)
 
 meta <- get_coagmet_meta()
@@ -44,7 +44,19 @@ head(meta)
 
 ```
 
-Get latest data from all stations:
+
+## Download metadata for all Norther water stations:
+
+```{r }
+
+meta <- get_coagmet_meta(network = "nw")
+
+head(meta)
+
+```
+
+
+## Get latest data from all CoAgMet stations:
 
 ```{r}
 
@@ -56,7 +68,7 @@ head(latest)
 
 
 
-Find closest CoAgMet station to a given point:
+## Find closest CoAgMet station to a given point:
 ```{r}
 
 # coordinates for Denver
@@ -70,7 +82,7 @@ nearest_station
 ```
 
 
-Download data for one station:
+## Download data for one station:
 
 ```{r}
 
@@ -81,7 +93,7 @@ head(df)
 ```
 
 
-Plot air temp:
+### Plot air temp:
 ```{r}
 
 df |>
@@ -91,7 +103,7 @@ df |>
 ```
 
 
-Make an interactive plot of one variable with plotly:
+### Make an interactive plot of one variable with plotly:
 ```{r}
 
 #plot_coagmet_plotly(df, "air_temp")

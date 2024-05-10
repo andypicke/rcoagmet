@@ -4,12 +4,14 @@
 \alias{find_closest_coagmet_station}
 \title{Find closest CoAgMet station to given location (using Haversine formula)}
 \usage{
-find_closest_coagmet_station(xlat, xlon)
+find_closest_coagmet_station(xlat, xlon, network = "coagmet")
 }
 \arguments{
 \item{xlat}{latitidue (degN)}
 
 \item{xlon}{longitude (degE)}
+
+\item{network}{Network :either "coagmet" or "nw" (northern water). Default is coagmet}
 }
 \value{
 closest_station: 1 row Dataframe of info for closest station, including distance in meters

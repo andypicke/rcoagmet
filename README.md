@@ -14,7 +14,7 @@ The goal of rcoagmet is to provide functions for downloading data from
 [CoAgMet](https://coagmet.colostate.edu/) weather stations, using their
 [Data API](https://coagmet.colostate.edu/data/doc.html).
 
-## Installation
+# Installation
 
 You can install the development version of rcoagmet from
 [GitHub](https://github.com/) with:
@@ -24,9 +24,9 @@ You can install the development version of rcoagmet from
 devtools::install_github("andypicke/rcoagmet")
 ```
 
-## Example
+# Examples
 
-Download metadata for all CoAgMet stations:
+## Download metadata for all CoAgMet stations:
 
 ``` r
 library(rcoagmet)
@@ -48,7 +48,28 @@ head(meta)
 #> #   timestep_s <dbl>, network <chr>
 ```
 
-Get latest data from all stations:
+## Download metadata for all Norther water stations:
+
+``` r
+
+meta <- get_coagmet_meta(network = "nw")
+
+head(meta)
+#> # A tibble: 6 × 13
+#>   station name              location latitude_deg_n longitude_deg_e elevation_ft
+#>   <chr>   <chr>             <chr>             <dbl>           <dbl>        <dbl>
+#> 1 bld01   Boulder South We… Fairvie…           40.0           -105.         5515
+#> 2 bld02   Boulder North We… Foothil…           40.0           -105.         5561
+#> 3 bru01   Brush             1 mile …           40.3           -103.         4215
+#> 4 btd01   Berthoud          Norther…           40.3           -105.         5069
+#> 5 crk01   Crook             3 miles…           40.8           -102.         3735
+#> 6 eat01   Eaton             3 miles…           40.6           -104.         4900
+#> # ℹ 7 more variables: anemometer_height_m <dbl>, active <chr>,
+#> #   irrigation <chr>, first_observation <chr>, last_observation <chr>,
+#> #   timestep_s <dbl>, network <chr>
+```
+
+## Get latest data from all CoAgMet stations:
 
 ``` r
 
@@ -58,18 +79,18 @@ head(latest)
 #> # A tibble: 6 × 15
 #>   station date_and_time       air_temp    rh dewpoint solar_rad x5min_precip
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>        <dbl>
-#> 1 akr02   2024-05-06 07:00:00     58.5 0.254    23.2      257.            NA
-#> 2 alt01   2024-05-06 07:00:00     50.5 0.336    22.9       99.7           NA
-#> 3 avn01   2024-05-06 07:10:00     54.6 0.182    12.1      376              0
-#> 4 bla01   2024-05-06 07:05:00     36.5 0.305     8.31     359              0
-#> 5 bnv01   2024-05-06 07:10:00     33.2 0.429    13.0      301.             0
-#> 6 brg01   2024-05-06 07:00:00     51.8 0.464    31.9       84.0           NA
+#> 1 akr02   2024-05-10 09:00:00     53.3 0.648     41.7     624.            NA
+#> 2 alt01   2024-05-10 09:00:00     51.2 0.567     36.4     333             NA
+#> 3 avn01   2024-05-10 09:20:00     47.2 0.868     43.5     246.             0
+#> 4 bla01   2024-05-10 09:20:00     35.3 0.922     33.3     727.             0
+#> 5 bnv01   2024-05-10 09:20:00     35.3 0.879     32.1      53.9            0
+#> 6 brg01   2024-05-10 09:00:00     55.0 0.53      38.2     524.            NA
 #> # ℹ 8 more variables: hourly_precip <dbl>, wind <dbl>, wind_dir <dbl>,
 #> #   gust_speed <dbl>, gust_dir <dbl>, x5cm_soil_temp <dbl>,
 #> #   x15cm_soil_temp <dbl>, date <date>
 ```
 
-Find closest CoAgMet station to a given point:
+## Find closest CoAgMet station to a given point:
 
 ``` r
 
@@ -78,9 +99,6 @@ xlat <- 39.74
 xlon <- -104.99
 
 nearest_station <- find_closest_coagmet_station(xlat, xlon)
-#> New names:
-#> • `` -> `...1`
-#> • `` -> `...2`
 
 nearest_station
 #> # A tibble: 1 × 14
@@ -92,7 +110,7 @@ nearest_station
 #> #   timestep_s <dbl>, network <chr>, distance_m <dbl>
 ```
 
-Download data for one station:
+## Download data for one station:
 
 ``` r
 
@@ -102,17 +120,17 @@ head(df)
 #> # A tibble: 6 × 14
 #>   station date_and_time       air_temp    rh dewpoint solar_rad precip  wind
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>  <dbl> <dbl>
-#> 1 den01   2024-05-01 00:00:00     52.5 0.286     20.8      0         0  2.3 
-#> 2 den01   2024-05-01 01:00:00     50.9 0.373     25.7      0         0  2.98
-#> 3 den01   2024-05-01 02:00:00     50.0 0.395     26.3      0         0  2.12
-#> 4 den01   2024-05-01 03:00:00     49.3 0.35      22.8      0         0  1.67
-#> 5 den01   2024-05-01 04:00:00     49.1 0.333     21.4      0         0  2.67
-#> 6 den01   2024-05-01 05:00:00     49.8 0.289     18.7      0.75      0  3.05
+#> 1 den01   2024-05-05 00:00:00     53.8 0.409     30.5      0         0  2.99
+#> 2 den01   2024-05-05 01:00:00     51.9 0.466     32.1      0         0  2.52
+#> 3 den01   2024-05-05 02:00:00     50.4 0.533     34.0      0         0  1.84
+#> 4 den01   2024-05-05 03:00:00     49.4 0.569     34.8      0         0  2.81
+#> 5 den01   2024-05-05 04:00:00     46.7 0.604     33.7      0         0  3   
+#> 6 den01   2024-05-05 05:00:00     45.5 0.595     32.2      1.87      0  2.89
 #> # ℹ 6 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_dir <dbl>,
 #> #   x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>
 ```
 
-Plot air temp:
+### Plot air temp:
 
 ``` r
 
@@ -121,9 +139,9 @@ df |>
   ggplot2::geom_line()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
-Make an interactive plot of one variable with plotly:
+### Make an interactive plot of one variable with plotly:
 
 ``` r
 

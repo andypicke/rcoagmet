@@ -10,11 +10,10 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of [rcoagmet](#rcoagmet)(emberr
-(<https://github.com/andypicke/emberr>) is to provide functions for
-downloading data from [CoAgMet](https://coagmet.colostate.edu/) weather
-stations, using their [Data
-API](https://coagmet.colostate.edu/data/doc.html).
+The goal of [rcoagmet](https://github.com/andypicke/rcoagmet) is to
+provide functions for downloading data from
+[CoAgMet](https://coagmet.colostate.edu/) weather stations, using their
+[Data API](https://coagmet.colostate.edu/data/doc.html).
 
 See also this [blog
 post](https://andypicke.quarto.pub/portfolio/posts/rcoagmet/rcoagmet.html)
@@ -85,12 +84,12 @@ head(latest)
 #> # A tibble: 6 × 15
 #>   station date_and_time       air_temp    rh dewpoint solar_rad x5min_precip
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>        <dbl>
-#> 1 akr02   2024-05-14 08:00:00     61.2 0.604     47.3      447.           NA
-#> 2 alt01   2024-05-14 08:00:00     63.6 0.442     41.4      405.           NA
-#> 3 avn01   2024-05-14 08:50:00     67.9 0.471     47.0      416.            0
+#> 1 akr02   2024-05-14 09:00:00     66.4 0.461     45.1      629            NA
+#> 2 alt01   2024-05-14 09:00:00     68.5 0.331     38.4      677.           NA
+#> 3 avn01   2024-05-14 09:00:00     68.6 0.459     47.0      630.            0
 #> 4 bla01   2024-05-14 08:55:00     56.7 0.43      34.4      677             0
-#> 5 bnv01   2024-05-14 08:50:00     56.9 0.408     33.3      711.            0
-#> 6 brg01   2024-05-14 08:00:00     63.3 0.479     43.2      243.           NA
+#> 5 bnv01   2024-05-14 09:00:00     56.7 0.417     33.7      743.            0
+#> 6 brg01   2024-05-14 09:00:00     70.7 0.338     40.8      566.           NA
 #> # ℹ 8 more variables: hourly_precip <dbl>, wind <dbl>, wind_dir <dbl>,
 #> #   gust_speed <dbl>, gust_dir <dbl>, x5cm_soil_temp <dbl>,
 #> #   x15cm_soil_temp <dbl>, date <date>
@@ -143,6 +142,8 @@ head(df)
 df |>
   ggplot2::ggplot(ggplot2::aes(date_and_time, air_temp)) +
   ggplot2::geom_line()
+#> Warning: Removed 1 row containing missing values or values outside the scale range
+#> (`geom_line()`).
 ```
 
 <img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />

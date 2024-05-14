@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of [rcoagmet](emberr (https://github.com/andypicke/emberr) is to provide functions for downloading data from [CoAgMet](https://coagmet.colostate.edu/) weather stations, using their [Data API](https://coagmet.colostate.edu/data/doc.html).
+The goal of [rcoagmet](https://github.com/andypicke/rcoagmet) is to provide functions for downloading data from [CoAgMet](https://coagmet.colostate.edu/) weather stations, using their [Data API](https://coagmet.colostate.edu/data/doc.html).
 
 See also this [blog post](https://andypicke.quarto.pub/portfolio/posts/rcoagmet/rcoagmet.html) describing the package and showing some examples.
 

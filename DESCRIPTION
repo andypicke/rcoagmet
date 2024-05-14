@@ -18,6 +18,7 @@ Imports:
     dplyr,
     geosphere,
     glue,
+    httr,
     janitor,
     lifecycle,
     lubridate,

@@ -10,9 +10,15 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of rcoagmet is to provide functions for downloading data from
-[CoAgMet](https://coagmet.colostate.edu/) weather stations, using their
-[Data API](https://coagmet.colostate.edu/data/doc.html).
+The goal of [rcoagmet](#rcoagmet)(emberr
+(<https://github.com/andypicke/emberr>) is to provide functions for
+downloading data from [CoAgMet](https://coagmet.colostate.edu/) weather
+stations, using their [Data
+API](https://coagmet.colostate.edu/data/doc.html).
+
+See also this [blog
+post](https://andypicke.quarto.pub/portfolio/posts/rcoagmet/rcoagmet.html)
+describing the package and showing some examples.
 
 # Installation
 
@@ -79,12 +85,12 @@ head(latest)
 #> # A tibble: 6 × 15
 #>   station date_and_time       air_temp    rh dewpoint solar_rad x5min_precip
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>        <dbl>
-#> 1 akr02   2024-05-10 09:00:00     53.3 0.648     41.7     624.            NA
-#> 2 alt01   2024-05-10 09:00:00     51.2 0.567     36.4     333             NA
-#> 3 avn01   2024-05-10 09:20:00     47.2 0.868     43.5     246.             0
-#> 4 bla01   2024-05-10 09:20:00     35.3 0.922     33.3     727.             0
-#> 5 bnv01   2024-05-10 09:20:00     35.3 0.879     32.1      53.9            0
-#> 6 brg01   2024-05-10 09:00:00     55.0 0.53      38.2     524.            NA
+#> 1 akr02   2024-05-14 08:00:00     61.2 0.604     47.3      447.           NA
+#> 2 alt01   2024-05-14 08:00:00     63.6 0.442     41.4      405.           NA
+#> 3 avn01   2024-05-14 08:50:00     67.9 0.471     47.0      416.            0
+#> 4 bla01   2024-05-14 08:55:00     56.7 0.43      34.4      677             0
+#> 5 bnv01   2024-05-14 08:50:00     56.9 0.408     33.3      711.            0
+#> 6 brg01   2024-05-14 08:00:00     63.3 0.479     43.2      243.           NA
 #> # ℹ 8 more variables: hourly_precip <dbl>, wind <dbl>, wind_dir <dbl>,
 #> #   gust_speed <dbl>, gust_dir <dbl>, x5cm_soil_temp <dbl>,
 #> #   x15cm_soil_temp <dbl>, date <date>
@@ -120,12 +126,12 @@ head(df)
 #> # A tibble: 6 × 14
 #>   station date_and_time       air_temp    rh dewpoint solar_rad precip  wind
 #>   <chr>   <dttm>                 <dbl> <dbl>    <dbl>     <dbl>  <dbl> <dbl>
-#> 1 den01   2024-05-05 00:00:00     53.8 0.409     30.5      0         0  2.99
-#> 2 den01   2024-05-05 01:00:00     51.9 0.466     32.1      0         0  2.52
-#> 3 den01   2024-05-05 02:00:00     50.4 0.533     34.0      0         0  1.84
-#> 4 den01   2024-05-05 03:00:00     49.4 0.569     34.8      0         0  2.81
-#> 5 den01   2024-05-05 04:00:00     46.7 0.604     33.7      0         0  3   
-#> 6 den01   2024-05-05 05:00:00     45.5 0.595     32.2      1.87      0  2.89
+#> 1 den01   2024-05-09 00:00:00     48.2 0.262     15.1      0         0  1.93
+#> 2 den01   2024-05-09 01:00:00     48   0.255     14.3      0         0  2.15
+#> 3 den01   2024-05-09 02:00:00     47.8 0.255     14.1      0         0  1.28
+#> 4 den01   2024-05-09 03:00:00     47.2 0.284     16.1      0         0  0.68
+#> 5 den01   2024-05-09 04:00:00     46.3 0.329     18.7      0         0  1.65
+#> 6 den01   2024-05-09 05:00:00     46.2 0.347     19.8      0.82      0  3.1 
 #> # ℹ 6 more variables: wind_dir <dbl>, gust_speed <dbl>, gust_dir <dbl>,
 #> #   x5cm_soil_temp <dbl>, x15cm_soil_temp <dbl>, date <date>
 ```

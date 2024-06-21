@@ -6,10 +6,10 @@
 \usage{
 construct_data_url(
   station_id = "cht01",
-  time_step = "hourly",
+  time_step = c("hourly", "5min", "daily", "latest"),
   date_from = lubridate::today() - 5,
   date_to = "now",
-  network = "coagmet"
+  network = c("coagmet", "nw")
 )
 }
 \arguments{

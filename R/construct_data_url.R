@@ -11,10 +11,14 @@
 #' @export
 
 construct_data_url <- function(station_id = "cht01",
-                               time_step = "hourly",
+                               time_step = c("hourly", "5min", "daily", "latest"),
                                date_from = lubridate::today() - 5,
                                date_to = "now",
-                               network = "coagmet") {
+                               network = c("coagmet", "nw")) {
+
+  # check inputs
+  network = match.arg(network)
+  time_step = match.arg(time_step)
 
   base_url <- "https://coagmet.colostate.edu/"
 
@@ -25,8 +29,6 @@ construct_data_url <- function(station_id = "cht01",
     network_str <- ""
   } else if (network == "nw") {
     network_str <- "nw/"
-  }  else {
-    stop("network must be 'coagmet' or 'nw' ")
   }
 
   # build complete URL for API request

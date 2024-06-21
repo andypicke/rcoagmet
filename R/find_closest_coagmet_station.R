@@ -10,7 +10,10 @@
 
 
 
-find_closest_coagmet_station <- function(xlat, xlon, network = "coagmet"){
+find_closest_coagmet_station <- function(xlat, xlon, network = c("coagmet", "nw")){
+
+  # check input
+  network = match.arg(network)
 
   # get all stations info
   stations <- rcoagmet::get_coagmet_meta(network = network)

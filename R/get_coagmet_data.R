@@ -10,13 +10,16 @@
 #' @export
 
 
-get_coagmet_data <- function(station_id="cht01", time_step="hourly", date_from = lubridate::today() - 5,
-                             date_to = "now", network = "coagmet"){
+get_coagmet_data <- function(station_id = "cht01",
+                             time_step = c("hourly", "5min", "daily", "latest"),
+                             date_from = lubridate::today() - 5,
+                             date_to = "now",
+                             network = c("coagmet", "nw")){
 
-  # check if time_step is one of the valid options
-  if (!any(time_step == c("hourly", "5min", "daily", "latest"))) {
-    stop("the time_step entered is not valid")
-  }
+  # check inputs
+  network = match.arg(network)
+  time_step = match.arg(time_step)
+
 
   url <- rcoagmet::construct_data_url(station_id, time_step, date_from, date_to, network)
 

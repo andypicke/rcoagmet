@@ -4,7 +4,7 @@
 \alias{find_closest_coagmet_station}
 \title{Find closest CoAgMet station to given location (using Haversine formula)}
 \usage{
-find_closest_coagmet_station(xlat, xlon, network = "coagmet")
+find_closest_coagmet_station(xlat, xlon, network = c("coagmet", "nw"))
 }
 \arguments{
 \item{xlat}{latitidue (degN)}

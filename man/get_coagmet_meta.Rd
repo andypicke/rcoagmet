@@ -4,7 +4,7 @@
 \alias{get_coagmet_meta}
 \title{Get Metadata for CoAgMet Weather Stations}
 \usage{
-get_coagmet_meta(station_id = "all", network = "coagmet")
+get_coagmet_meta(station_id = "all", network = c("coagmet", "nw"))
 }
 \arguments{
 \item{station_id}{ID of station to retrieve info for. Default is all stations}

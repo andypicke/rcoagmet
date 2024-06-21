@@ -8,14 +8,14 @@
 #' @export
 
 
-get_coagmet_meta <- function(station_id = "all", network = "coagmet") {
+get_coagmet_meta <- function(station_id = "all", network = c("coagmet", "nw")) {
+
+  network <- match.arg(network)
 
   if (network == "coagmet") {
     file_url <- "https://coagmet.colostate.edu/data/metadata.csv?header=yes"
   } else if (network == "nw") {
     file_url <- "https://coagmet.colostate.edu/data/nw/metadata.csv?header=yes"
-  } else {
-    stop("network must be 'coagmet' or 'nw' ")
   }
 
   meta <- readr::read_csv(

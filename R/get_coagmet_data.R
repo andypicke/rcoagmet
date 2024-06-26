@@ -2,7 +2,7 @@
 #' @param station_id ID of weather station. Default = 'cht01'. Use "all" to retrieve data for all stations
 #' @param time_step Frequency of data (5min, hourly, daily, latest); default 'hourly'
 #' @param date_from Start date of data to get in yyyy-mm-dd format: default is 5 days ago
-#' @param date_to End date of data in yyyy-mm-dd format; defaut = 'now'
+#' @param date_to End date of data in yyyy-mm-dd format; default = 'now'
 #' @param network Network :either "coagmet" or "nw" (northern water). Default is coagmet
 #' @returns Data frame of processed CoAgMet data
 #' @examples

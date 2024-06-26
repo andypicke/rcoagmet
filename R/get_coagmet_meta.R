@@ -18,9 +18,8 @@ get_coagmet_meta <- function(station_id = "all", network = c("coagmet", "nw")) {
     file_url <- "https://coagmet.colostate.edu/data/nw/metadata.csv?header=yes"
   }
 
-  meta <- readr::read_csv(
-    file = file_url,
-    show_col_types = FALSE) |>
+
+  meta <- fetch_coagmet_data_csv(file_url) |>
     janitor::clean_names()
 
   if (station_id != "all") {

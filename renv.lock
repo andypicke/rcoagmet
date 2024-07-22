@@ -11,7 +11,7 @@
   "Packages": {
     "MASS": {
       "Package": "MASS",
-      "Version": "7.3-60.2",
+      "Version": "7.3-61",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -22,7 +22,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "2f342c46163b0b54d7b64d1f798e2c78"
+      "Hash": "0cafd6f0500e5deba33be22c46bf6055"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -63,14 +63,14 @@
     },
     "Rcpp": {
       "Package": "Rcpp",
-      "Version": "1.0.12",
+      "Version": "1.0.13",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "methods",
         "utils"
       ],
-      "Hash": "5ea2700d21e038ace58269ecdbeb9ec0"
+      "Hash": "f27411eb6d9c3dada5edd444b8416675"
     },
     "askpass": {
       "Package": "askpass",
@@ -151,14 +151,14 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "3.6.2",
+      "Version": "3.6.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "1216ac65ac55ec0058a6f75d7ca0fd52"
+      "Hash": "b21916dd77a27642b447374a5d30ecf3"
     },
     "clipr": {
       "Package": "clipr",
@@ -196,7 +196,7 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.5.2",
+      "Version": "1.5.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -204,7 +204,7 @@
         "methods",
         "utils"
       ],
-      "Hash": "e8a1e41acf02548751f45c718d55aa6a"
+      "Hash": "859d96e65ef198fd43e82b9628d593ef"
     },
     "crosstalk": {
       "Package": "crosstalk",
@@ -242,14 +242,14 @@
     },
     "digest": {
       "Package": "digest",
-      "Version": "0.6.35",
+      "Version": "0.6.36",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "698ece7ba5a4fa4559e3d537e7ec3d31"
+      "Hash": "fd6824ad91ede64151e93af67df6376b"
     },
     "dplyr": {
       "Package": "dplyr",
@@ -299,10 +299,10 @@
     },
     "farver": {
       "Package": "farver",
-      "Version": "2.1.1",
+      "Version": "2.1.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "8106d78941f34855c440ddb946b8f7a5"
+      "Hash": "680887028577f3fa2a81e410ed0d6e42"
     },
     "fastmap": {
       "Package": "fastmap",
@@ -534,7 +534,7 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.47",
+      "Version": "1.48",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -546,7 +546,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "7c99b2d55584b982717fcc0950378612"
+      "Hash": "acf380f300c721da9fde7df115a5f86f"
     },
     "labeling": {
       "Package": "labeling",
@@ -1066,13 +1066,13 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.51",
+      "Version": "0.52",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "xfun"
       ],
-      "Hash": "d44e2fcd2e4e076f0aac540208559d1d"
+      "Hash": "cfbad971a71f0e27cec22e544a08bc3b"
     },
     "tzdb": {
       "Package": "tzdb",
@@ -1159,7 +1159,7 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.44",
+      "Version": "0.46",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1167,14 +1167,14 @@
         "stats",
         "tools"
       ],
-      "Hash": "317a0538d32f4a009658bcedb7923f4b"
+      "Hash": "00ce32f398db0415dde61abfef11300c"
     },
     "yaml": {
       "Package": "yaml",
-      "Version": "2.3.8",
+      "Version": "2.3.9",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "29240487a071f535f5e5d5a323b7afbd"
+      "Hash": "9cb28d11799d93c953f852083d55ee9e"
     }
   }
 }

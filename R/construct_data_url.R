@@ -32,7 +32,7 @@ construct_data_url <- function(station_id = "cht01",
   if (time_step == "daily") {
     data_fields_str <- "&fields=tAvg,tMax,tMaxTime,tMin,tMinTime,rhMax,rhMaxTime,rhMin,rhMinTime,precip,windRun,gustSpeed,gustTime,gustDir,solarRad,rso,etrASCE,etrPK,etrHourly,etoASCE,st5Max,st5MaxTime,st5Min,st5MinTime,st15Max,st15MaxTime,st15Min,st15MinTime"
   } else {
-    data_fields_str <- "&fields=t,rh,dewpt,solarRad,rso,precip,windSpeed,windDir,gustSpeed,gustDir,st5cm,st15cm"
+    data_fields_str <- "&fields=t,rh,dewpt,solarRad,rso,precip,windSpeed,windDir,gustSpeed"
   }
 
   # coagmet or norther water stations
